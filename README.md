@@ -2,7 +2,7 @@ Para realizar esse projeto foi utilizado o Semantic-UI como framework de css e R
 
 
 
-## Informacoes uteis 
+## Informaçõs úteis 
 
 In the project directory, you can run:
 
