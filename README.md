@@ -4,7 +4,7 @@ Para realizar esse projeto foi utilizado o Semantic-UI como framework de css e R
 
 ## Informaçõs úteis 
 
-In the project directory, you can run:
+Não possui as imagens dos personagens pois a api não retorna as imagens, os links das imagens não funcionam. 
 
 ### `npm start`
 
