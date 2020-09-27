@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css';
 import { Grid, Search, Button, Card } from 'semantic-ui-react'
-
+import Cards from './Cards';
 
 
 
@@ -32,7 +32,7 @@ function Principal() {
         });
 
         setPersonagemData(novoPersonagem)
-   
+
 
 
       });
@@ -52,7 +52,7 @@ function Principal() {
         });
 
         setMundoData(novoMundo)
-     
+
 
 
       });
@@ -66,22 +66,8 @@ function Principal() {
   };
 
 
-  const getPersonagemCard = (personagemID) => {
-    const { id, name, mundo } = personagemData[personagemID];
-    return (
-      <Card>
-        <Card.Content>
-
-          <Card.Header>{name}</Card.Header>
-          <Card.Meta>Planeta: {mundo}</Card.Meta>
-
-        </Card.Content>
-
-      </Card>
-    );
-  };
   const getMundoCard = (MundoID) => {
-    const { id, name } = MundoData[MundoID];
+    const { name } = MundoData[MundoID];
     return (
       <Button onClick={() => PesquisarMundo(name)} >{name}</Button>
     );
@@ -89,7 +75,7 @@ function Principal() {
 
   const PesquisarMundo = (name) => {
     setFilterMundo(name);
-    console.log(name)
+
   }
 
 
@@ -120,8 +106,8 @@ function Principal() {
                 (id) =>
                   personagemData[id].pesquisa.includes(filter) &&
                   personagemData[id].mundo.includes(filterMundo) &&
-               
-                  getPersonagemCard(id)
+                  <Cards {...personagemData[id]} />
+
 
               )}
 
@@ -138,8 +124,6 @@ function Principal() {
               <Button.Group vertical>
                 <Button onClick={() => PesquisarMundo('')} >Todos</Button>
                 {Object.keys(MundoData).map(
-
-
                   (id) =>
 
                     getMundoCard(id)
@@ -148,11 +132,6 @@ function Principal() {
 
               </Button.Group>
             </Card>
-
-
-
-
-
           </Grid.Column>
         </Grid.Row>
 
