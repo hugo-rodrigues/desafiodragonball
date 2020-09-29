@@ -32,7 +32,7 @@ function Principal() {
         });
 
         setPersonagemData(novoPersonagem)
-
+    
 
 
       });
@@ -60,9 +60,9 @@ function Principal() {
   }, []);
 
   const handleSearchChange = (e) => {
-    setFilter(e.target.value);
+    setFilter(e.target.value.toUpperCase());
 
-    console.log(e.target.value.toUpperCase())
+    
   };
 
 
